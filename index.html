@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocacy Training: Finding Your Voice & Making Change</title>
+    <style>
+        :root {
+            --primary-color: #4c6ef5;
+            --secondary-color: #40c057;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #228be6);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .date-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .intro-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .intro-message {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .assessment-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .assessment-link {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .assessment-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .assessment-link h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .assessment-link p {
+            margin-bottom: 1.2rem;
+            color: #495057;
+        }
+        
+        .pre-link {
+            background-color: #e3fafc;
+            border: 2px solid #15aabf;
+        }
+        
+        .post-link {
+            background-color: #ebfbee;
+            border: 2px solid #37b24d;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .pre-button {
+            background-color: #15aabf;
+            color: white;
+        }
+        
+        .pre-button:hover {
+            background-color: #1098ad;
+            box-shadow: 0 4px 8px rgba(21, 170, 191, 0.3);
+        }
+        
+        .post-button {
+            background-color: #37b24d;
+            color: white;
+        }
+        
+        .post-button:hover {
+            background-color: #2f9e44;
+            box-shadow: 0 4px 8px rgba(55, 178, 77, 0.3);
+        }
+        
+        .learning-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .learning-objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        .objective-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .objective-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-card h3 .time {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: normal;
+        }
+        
+        .session-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .session-card li {
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .session-card p {
+            margin-bottom: 1rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .detailed-content {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .detailed-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .definition-box {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .definition-box h4 {
+            color: #1864ab;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-box p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .discussion-box {
+            background-color: #fff9db;
+            border-left: 4px solid #fcc419;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-box h4 {
+            color: #e67700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discussion-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .discussion-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background-color: #f3f0ff;
+            border-left: 4px solid #7950f2;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-box h4 {
+            color: #6741d9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box {
+            background-color: #ebfbee;
+            border-left: 4px solid #40c057;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feedback-box h4 {
+            color: #2b8a3e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .feedback-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .learning-objectives {
+                flex-direction: column;
+            }
+            
+            .assessment-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .assessment-link {
+                width: 100%;
+            }
+            
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finding Your Voice & Making Change</h1>
+            <h2>Advocacy Training: Persuasive Messaging & Risk Management</h2>
+            <p>A 2-hour interactive session to build your advocacy skills</p>
+            <div class="date-box">Tuesday, March 5, 2025</div>
+        </header>
+        
+        <section class="intro-section">
+            <div class="intro-message">
+                <p>Welcome to your advocacy training! This session will help you develop the skills to create persuasive messages and engage effectively with stakeholders. Watch the introduction video below to get started.</p>
+            </div>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cFdCzN7RYbw" title="Introduction to Advocacy Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="assessment-links">
+                <div class="assessment-link pre-link">
+                    <h3>Before We Begin</h3>
+                    <p>Please take a moment to complete this quick pre-training questionnaire to help us understand your current knowledge.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeU3pBdHQHDG1rvh0zcCq87uAqCocpLMw80e3WXB9h_uwkHQQ/viewform?usp=dialog" target="_blank" class="button pre-button">Take Pre-Assessment</a>
+                </div>
+                
+                <div class="assessment-link post-link">
+                    <h3>After Training</h3>
+                    <p>After completing the session, please fill out this questionnaire to reflect on what you've learned.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScYPXbL-MouVEcqzqx0d5_IND_0G_zWOXW0I9oeoLti8IE7_Q/viewform?usp=dialog" target="_blank" class="button post-button">Take Post-Assessment</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">What You'll Learn</h2>
+            
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <h3>Craft Persuasive Messages</h3>
+                    <p>Learn to use emotional appeals and social proof techniques to create messages that inspire action.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Engage With Stakeholders</h3>
+                    <p>Develop skills for effective interactions with different types of stakeholders, even in brief conversations.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Create Structured Talking Points</h3>
+                    <p>Turn your advocacy knowledge into clear, organized talking points that get your message across.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Manage Potential Risks</h3>
+                    <p>Learn to identify challenges that might arise during advocacy events and develop plans to address them.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Navigate Advocacy Resources</h3>
+                    <p>Discover the tools and resources available to support your advocacy work.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Highlights</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Click on any session card to see detailed information about that section</p>
+            
+            <div class="session-grid">
+                <!-- Emotional Appeals Workshop Section -->
+                <div class="session-card" onclick="toggleSection('emotional-appeals')">
+                    <h3>Emotional Appeals Workshop <span class="time">20 min</span></h3>
+                    <p>Emotions can be powerful tools for change. You'll learn about different types of emotional appeals:</p>
+                    <ul>
+                        <li>Using hope to inspire positive action</li>
+                        <li>Leveraging empathy to connect with your audience</li>
+                        <li>Hands-on practice crafting emotional appeals for real scenarios</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="emotional-appeals" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Emotional Appeal:</strong> A persuasive technique that uses emotion to influence an audience's attitudes, beliefs, or behaviors.</p>
+                            <p><strong>Hope Appeal:</strong> Messages that inspire positive emotions about future possibilities.</p>
+                            <p><strong>Empathy Appeal:</strong> Messages that connect with the audience by understanding their feelings and perspectives.</p>
+                            <p><strong>Fear Appeal:</strong> Messages that highlight potential negative consequences to motivate action.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why are emotional appeals often more effective than purely logical arguments?</li>
+                                <li>How can we balance emotional appeals with factual information?</li>
+                                <li>What ethical considerations should we keep in mind when using emotional appeals?</li>
+                                <li>How do different audiences respond to different types of emotional appeals?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Crafting Emotional Appeals</h4>
+                            <p>Choose one of these advocacy scenarios:</p>
+                            <ol>
+                                <li>Convincing local businesses to donate to a youth program</li>
+                                <li>Encouraging your peers to participate in a community service project</li>
+                                <li>Persuading school administrators to adopt a new policy</li>
+                            </ol>
+                            <p>For your chosen scenario:</p>
+                            <ul>
+                                <li>Write a hope-based appeal (1-2 sentences)</li>
+                                <li>Write an empathy-based appeal (1-2 sentences)</li>
+                                <li>Circle the one you think would work better and write why</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>Which type of emotional appeal do you find most comfortable to use?</li>
+                                <li>How might you adapt your emotional appeals for different audiences?</li>
+                                <li>What challenges did you face when crafting emotional appeals?</li>
+                                <li>How can you ensure your emotional appeals remain authentic and honest?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Proof Techniques Section -->
+                <div class="session-card" onclick="toggleSection('social-proof')">
+                    <h3>Social Proof Techniques <span class="time">20 min</span></h3>
+                    <p>People are influenced by what others do. We'll explore:</p>
+                    <ul>
+                        <li>Using statistics to back up your message</li>
+                        <li>Incorporating testimonials from real people</li>
+                        <li>Leveraging endorsements from trusted figures</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="social-proof" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Social Proof:</strong> The psychological phenomenon where people copy the actions of others in an attempt to reflect correct behavior.</p>
+                            <p><strong>Testimonial:</strong> A statement testifying to the benefits or effectiveness of something, based on personal experience.</p>
+                            <p><strong>Endorsement:</strong> Public support by a respected individual or organization.</p>
+                            <p><strong>Statistical Evidence:</strong> Numerical data that supports your claims and demonstrates trends or impacts.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why does seeing others take action motivate us to do the same?</li>
+                                <li>How can statistics be presented most effectively?</li>
+                                <li>What makes testimonials powerful, and how can we collect them?</li>
+                                <li>How do we identify the right people whose endorsements would strengthen our message?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Social Proof Worksheet</h4>
+                            <p>Think about an advocacy issue you care about. Complete this simple worksheet:</p>
+                            <ul>
+                                <li>Write down 1 powerful statistic related to your issue</li>
+                                <li>Write 1 personal story or example that shows why this issue matters</li> 
+                                <li>Name 2 people or organizations whose support would strengthen your message</li>
+                                <li>Draft a short social media post (2-3 sentences) that uses at least one form of social proof</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>Which form of social proof do you find most convincing personally? Why?</li>
+                                <li>How can you ensure the statistics you use are accurate and not misleading?</li>
+                                <li>What challenges might you face in gathering effective testimonials?</li>
+                                <li>How would you adapt your social proof strategies for different channels (in-person, social media, formal presentations)?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stakeholder Interactions Section -->
+                <div class="session-card" onclick="toggleSection('stakeholder-interactions')">
+                    <h3>Stakeholder Interactions <span class="time">20 min</span></h3>
+                    <p>You'll develop skills to connect with different audiences:</p>
+                    <ul>
+                        <li>Active listening techniques for better understanding</li>
+                        <li>Adapting your message to different stakeholders</li>
+                        <li>Practice through role-play scenarios</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="stakeholder-interactions" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Stakeholder:</strong> Any person, group, or organization that has interest or concern in your advocacy issue.</p>
+                            <p><strong>Active Listening:</strong> Fully concentrating on what is being said rather than passively hearing the message.</p>
+                            <p><strong>Rapport:</strong> A close and harmonious relationship in which parties understand each other's feelings and ideas.</p>
+                            <p><strong>Message Adaptation:</strong> Tailoring your communication based on your audience's interests, concerns, and communication style.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why is it important to identify different stakeholders for your issue?</li>
+                                <li>How can you quickly establish rapport in brief interactions?</li>
+                                <li>What are the key differences in communicating with peers vs. authority figures?</li>
+                                <li>How can you remain authentic while adapting your message to different audiences?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Stakeholder Message Planning</h4>
+                            <p>Choose an advocacy issue and complete this exercise:</p>
+                            <ol>
+                                <li>Write down your main message about this issue (1 sentence)</li>
+                                <li>List 3 different stakeholders who might be interested in your issue (examples: school principal, community member, fellow student)</li>
+                                <li>For each stakeholder, write one way you would adjust your message to connect with them</li>
+                            </ol>
+                            <p>Practice these active listening techniques during discussions:</p>
+                            <ul>
+                                <li>Making appropriate eye contact</li>
+                                <li>Nodding to show understanding</li>
+                                <li>Asking "What do you mean by...?" when something isn't clear</li>
+                                <li>Saying "What I hear you saying is..." to check your understanding</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What active listening techniques felt most natural to you? Which were challenging?</li>
+                                <li>How did you adapt your message for different stakeholders?</li>
+                                <li>What did you learn from observing others' interactions?</li>
+                                <li>What will you do differently in your next stakeholder interaction?</li>
+                                <li>How can you prepare for unexpected reactions from stakeholders?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Risk Assessment Section -->
+                <div class="session-card" onclick="toggleSection('risk-assessment')">
+                    <h3>Risk Assessment <span class="time">30 min</span></h3>
+                    <p>Being prepared helps you advocate effectively:</p>
+                    <ul>
+                        <li>Identifying potential challenges during events</li>
+                        <li>Handling difficult questions confidently</li>
+                        <li>Creating backup plans for various scenarios</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="risk-assessment" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Risk Assessment:</strong> The process of identifying potential problems and developing plans to address them.</p>
+                            <p><strong>Contingency Plan:</strong> A prepared alternative course of action if things don't go as expected.</p>
+                            <p><strong>Assumption Testing:</strong> Examining your beliefs about how events will unfold to identify potential issues.</p>
+                            <p><strong>Difficult Questions:</strong> Challenging or unexpected inquiries that may undermine your message if not handled well.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>What are common challenges that arise during advocacy events?</li>
+                                <li>How can preparing for difficulties actually make your message stronger?</li>
+                                <li>What's the difference between being prepared and being overly anxious?</li>
+                                <li>How can you recover gracefully when things don't go as planned?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Simple Risk Planning</h4>
+                            <p>Think about an advocacy presentation you might give. Complete this simple worksheet:</p>
+                            <ol>
+                                <li><strong>List 3 potential challenges</strong> that might happen (Example: technology fails, someone asks a difficult question, you get nervous)</li>
+                                <li><strong>Choose your biggest concern</strong> from the list</li>
+                                <li><strong>Write down 2 specific things</strong> you could do if this challenge happens</li>
+                            </ol>
+                            <p>Practice answering one of these common challenging questions:</p>
+                            <ul>
+                                <li>"Why should we care about this issue when there are more urgent problems?"</li>
+                                <li>"Your proposal sounds expensive. How do you expect to fund this?"</li>
+                                <li>"What makes you qualified to speak on this topic?"</li>
+                            </ul>
+                            <p>Write your answer on your worksheet (1-2 sentences).</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What kinds of risks do you tend to overlook in your planning?</li>
+                                <li>How can you prepare for difficult questions without sounding rehearsed?</li>
+                                <li>What techniques help you stay calm when faced with unexpected challenges?</li>
+                                <li>How can you communicate effectively even when technology fails?</li>
+                                <li>What's one risk management strategy you'll implement in your next advocacy activity?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Creating Talking Points Section -->
+                <div class="session-card" onclick="toggleSection('talking-points')">
+                    <h3>Creating Talking Points <span class="time">20 min</span></h3>
+                    <p>Convert your knowledge into clear, structured messages:</p>
+                    <ul>
+                        <li>Framework for organizing your thoughts</li>
+                        <li>Hands-on practice drafting your own talking points</li>
+                        <li>Receiving feedback from peers to strengthen your message</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="talking-points" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Talking Points:</strong> Concise, well-structured messages that convey key information about your advocacy issue.</p>
+                            <p><strong>Message Framework:</strong> A structured approach to organizing information for effective communication.</p>
+                            <p><strong>Key Message:</strong> The single most important idea you want your audience to remember.</p>
+                            <p><strong>Supporting Points:</strong> Facts, examples, or stories that reinforce your key message.</p>
+                            <p><strong>Call to Action:</strong> A specific request for your audience to do something in response to your message.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why are well-structured talking points important for effective advocacy?</li>
+                                <li>How do talking points help you stay focused during conversations?</li>
+                                <li>What makes a talking point memorable?</li>
+                                <li>How can you adapt your talking points for different situations (30-second elevator pitch vs. longer discussion)?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: My Talking Points</h4>
+                            <p>Fill out this simple template for an advocacy issue you care about:</p>
+                            <ol>
+                                <li><strong>My Main Point:</strong> Write one clear sentence that states your position</li>
+                                <li><strong>My Best Reason:</strong> Write your strongest supporting point</li>
+                                <li><strong>Why People Should Care:</strong> Write one sentence that connects emotionally</li>
+                                <li><strong>What I Want People To Do:</strong> Write a specific action you want people to take</li>
+                            </ol>
+                            <p>Review your own talking points with these questions:</p>
+                            <ul>
+                                <li>Is my main point easy to understand?</li>
+                                <li>Is my reason convincing?</li>
+                                <li>Would someone who doesn't already care about this issue be moved by my emotional connection?</li>
+                                <li>Is my requested action something people can actually do?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What was most challenging about creating your talking points?</li>
+                                <li>How did the peer feedback help you improve your message?</li>
+                                <li>How comfortable do you feel delivering your talking points?</li>
+                                <li>What additional information or practice would help you feel more confident?</li>
+                                <li>How might you use these talking points in your upcoming advocacy work?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Next Steps Section -->
+                <div class="session-card" onclick="toggleSection('next-steps')">
+                    <h3>Next Steps <span class="time">10 min</span></h3>
+                    <p>At the end of the session, you'll:</p>
+                    <ul>
+                        <li>Review key learnings from the training</li>
+                        <li>Complete the post-assessment</li>
+                        <li>Learn about upcoming mock presentations</li>
+                        <li>Receive preparation assignments</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="next-steps" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Information</h4>
+                            <p><strong>Mock Presentations:</strong> Practice sessions where you'll deliver a short advocacy presentation to receive feedback.</p>
+                            <p><strong>Mid-Module Refresher:</strong> A follow-up session on March 11 to reinforce key skills and address questions.</p>
+                            <p><strong>Preparation Assignments:</strong> Tasks to complete before the next session to strengthen your advocacy skills.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Key Learnings Review</h4>
+                            <ul>
+                                <li>Effective advocacy combines emotional appeals with credible evidence</li>
+                                <li>Tailoring your message to different stakeholders increases your effectiveness</li>
+                                <li>Preparing for challenges helps you maintain confidence under pressure</li>
+                                <li>Well-structured talking points keep your message clear and consistent</li>
+                                <li>Advocacy is a skill that improves with practice and feedback</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Preparation Assignment</h4>
+                            <p>Before our next session, please complete these three simple tasks:</p>
+                            <ol>
+                                <li><strong>Finalize your talking points</strong> using the template from today</li>
+                                <li><strong>Prepare a 2-minute advocacy presentation</strong> for our next session</li>
+                                <li><strong>Practice your presentation</strong> by recording yourself on your phone or speaking in front of a mirror</li>
+                            </ol>
+                            <p><strong>Your 2-Minute Presentation Should Include:</strong></p>
+                            <ul>
+                                <li>A clear main message</li>
+                                <li>One strong supporting point</li>
+                                <li>One emotional appeal (hope or empathy)</li>
+                                <li>A specific call to action</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Final Reflection Questions</h4>
+                            <ul>
+                                <li>What was your most valuable takeaway from today's training?</li>
+                                <li>Which skill do you feel most confident about?</li>
+                                <li>Which area would you like more practice with?</li>
+                                <li>How do you plan to apply these skills in your advocacy work?</li>
+                                <li>What additional resources would help you continue developing as an advocate?</li>
+                            </ul>
+                            <p style="margin-top: 15px;"><strong>Don't forget to complete the post-assessment questionnaire before leaving!</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="footer">
+            <p>© 2025 Club Stride Social Impact Program | March 5, 2025 | Remember to complete both pre and post assessments!</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const contentElement = document.getElementById(sectionId);
+            const parentCard = contentElement.parentElement;
+            const expandIcon = parentCard.querySelector('.expand-icon');
+            
+            if (contentElement.classList.contains('active')) {
+                contentElement.classList.remove('active');
+                expandIcon.textContent = '+';
+            } else {
+                contentElement.classList.add('active');
+                expandIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>
